@@ -38,7 +38,7 @@ pipeline {
         }
         stage('DeployToProduction') {
             when {
-                branch 'master'
+                branch 'canary'
             }
             steps {
                 input 'Deploy to Canary Version?'
