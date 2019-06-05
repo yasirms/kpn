@@ -2,7 +2,7 @@ pipeline {
     agent any
     environment {
         // yasirmehmood is Dockerhub username
-        DOCKER_IMAGE_NAME = "yasirmehmood/stable"
+        DOCKER_IMAGE_NAME = "yasirmehmood/canary"
     }
     stages {
         stage('Build') {
