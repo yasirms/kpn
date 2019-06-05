@@ -41,11 +41,11 @@ pipeline {
                 branch 'master'
             }
             steps {
-                input 'Deploy to Production?'
+                input 'Deploy to Canary Version?'
                 milestone(1)
                 kubernetesDeploy(
                     kubeconfigId: 'kubeconfig',
-                    configs: 'deploy-stable.yaml',
+                    configs: 'deploy-canary.yaml',
                     enableConfigSubstitution: true
                 )
             }
