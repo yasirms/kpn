@@ -12,7 +12,7 @@ pipeline {
         }
         stage('Build Docker Image') {
             when {
-                branch 'master'
+                branch 'canary'
             }
             steps {
                 script {
@@ -25,7 +25,7 @@ pipeline {
         }
         stage('Push Docker Image') {
             when {
-                branch 'master'
+                branch 'canary'
             }
             steps {
                 script {
