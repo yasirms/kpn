@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: kpn-canary
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: kpn-app
+        track: canary
+        version: 1.0.0
+    spec:
+      containers:
+        - name: kpn-canary
+          image: $DOCKER_IMAGE_NAME
+          ports:
+            - name: http
+              containerPort: 80
